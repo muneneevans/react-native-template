@@ -102,7 +102,7 @@ const SignupButtonText = styled.Text`
 `
 
 
-export default () => (
+export default ({ navigation }) => (
     <Page>
         <StatusBar backgroundColor="#B50937" barStyle="light-content" />
         <Banner>
@@ -110,7 +110,9 @@ export default () => (
         </Banner>
 
         <LoginSection>
-            <LoginButton >
+            <LoginButton
+                onPress={() => navigation.navigate('LoginPage')}
+            >
                 <LoginIcon name="login" size={20} />
                 <LoginButtonText>Log in</LoginButtonText>
             </LoginButton>
