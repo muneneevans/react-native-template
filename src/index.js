@@ -8,8 +8,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import codePush from 'react-native-code-push';
 import SplashScreen from 'react-native-splash-screen';
 
-import LoadingPage from 'pages/LoadingPage';
 let codePushOptions = {checkFrequency: codePush.CheckFrequency.ON_APP_RESUME};
+import Routes from "pages/Routes"
 
 const onBeforeLift = () => ({});
 class Finca extends React.Component{
@@ -29,35 +29,7 @@ class Finca extends React.Component{
         <SafeAreaView style={{flex: 1}}>
           <StatusBar backgroundColor="white" barStyle="dark-content" />
           <NavigationContainer>
-            <View>
-              <Text style={{fontFamily: 'AvenirLTStd-Black'}}>
-                My awesome font
-              </Text>
-              <Text style={{fontFamily: 'AvenirLTStd-Book'}}>
-                My awesome font
-              </Text>
-              <Text style={{fontFamily: 'AvenirLTStd-Roman'}}>
-                My awesome font
-              </Text>
-              <Text style={{fontFamily: 'AvenirLTStd-Roman'}}>
-                My awesome font
-              </Text>
-              <Text style={{fontFamily: 'AvenirLTStd-Roman'}}>
-                My awesome font
-              </Text>
-              <Text style={{fontFamily: 'AvenirLTStd-Roman'}}>
-                My awesome font
-              </Text>
-              <Text style={{fontFamily: 'AvenirLTStd-Roman'}}>
-                My awesome font
-              </Text>
-              <Text style={{fontFamily: 'AvenirLTStd-Roman'}}>
-                My awesome font
-              </Text>
-              <Text style={{fontFamily: 'AvenirLTStd-Roman'}}>
-                My awesome font
-              </Text>
-            </View>
+            <Routes />
           </NavigationContainer>
         </SafeAreaView>
     </Provider>
