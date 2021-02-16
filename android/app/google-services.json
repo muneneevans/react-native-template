@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "154304677460",
+    "project_id": "finca-303010",
+    "storage_bucket": "finca-303010.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:154304677460:android:54b57f9392c523a5e44fc1",
+        "android_client_info": {
+          "package_name": "com.finca"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "154304677460-mpc0hglijqf4mi5adeklk7chge9namrb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.finca",
+            "certificate_hash": "25f078d2edb2789e0e6304588e0bbbb84b506486"
+          }
+        },
+        {
+          "client_id": "154304677460-hcuqq964t49a7p9i80h668pr91986slo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlruiCcZRJ0auUwFYohz1G4gmr5dHkxZw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "154304677460-hcuqq964t49a7p9i80h668pr91986slo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
