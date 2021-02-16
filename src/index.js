@@ -7,33 +7,33 @@ import store, {persistor} from 'store/configureStore';
 import {NavigationContainer} from '@react-navigation/native';
 import codePush from 'react-native-code-push';
 import SplashScreen from 'react-native-splash-screen';
+import LoadingPage from 'pages/LoadingPage';
 
 let codePushOptions = {checkFrequency: codePush.CheckFrequency.ON_APP_RESUME};
-import Routes from "pages/Routes"
+import Routes from 'pages/Routes';
 
 const onBeforeLift = () => ({});
-class Finca extends React.Component{
-
+class Finca extends React.Component {
   componentDidMount() {
-    SplashScreen.hide()
+    SplashScreen.hide();
   }
-  
-  render(){
-    return(
-    <Provider store={store}>
-      <PersistGate
-        onBeforeLift={onBeforeLift}
-        loading={null }
-        persistor={persistor}>
-      </PersistGate>
-        <SafeAreaView style={{flex: 1}}>
-          <StatusBar backgroundColor="white" barStyle="dark-content" />
-          <NavigationContainer>
-            <Routes />
-          </NavigationContainer>
-        </SafeAreaView>
-    </Provider>
-    )
+
+  render() {
+    return (
+      <Provider store={store}>
+        <PersistGate
+          onBeforeLift={onBeforeLift}
+          loading={LoadingPage}
+          persistor={persistor}>
+          <SafeAreaView style={{flex: 1}}>
+            <StatusBar backgroundColor="white" barStyle="dark-content" />
+            <NavigationContainer>
+              <Routes />
+            </NavigationContainer>
+          </SafeAreaView>
+        </PersistGate>
+      </Provider>
+    );
   }
 }
 
