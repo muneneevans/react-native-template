@@ -81,43 +81,26 @@ const LinkText = styled.Text`
     text-decoration: underline;    
 `;
 
-export default function Login({signIn}) {
+export default function Login({confirmCode}) {
   // If null, no SMS has been sent
   const {control, handleSubmit, errors} = useForm();
-  const onSubmit = (data) => signIn(data.phoneNumber);
-
-  // Handle the button press
-
-  // if (!confirm) {
-  //   return (
-  //     <Button
-  //       title="Phone Number Sign In"
-  //       onPress={() => signInWithPhoneNumber('+254713541368')}
-  //     />
-  //   );
-  // }
-  // return (
-  //   <>
-  //   <TextInput value={code} onChangeText={text => setCode(text)} />
-  //   <Button title="Confirm Code" onPress={() => confirmCode()} />
-  // </>
-  // )
+  const onSubmit = (data) => confirmCode(data.code);
   return (
     <Page>
       <Controller
         control={control}
         render={({onChange, onBlur, value}) => (
           <Field>
-            <Label>Your phone number</Label>
+            <Label>Verification code</Label>
 
             <Switcher
-              value={errors.phoneNumber?.type}
+              value={errors.code?.type}
               required={<ErrorText>This field is required</ErrorText>}
               pattern={<ErrorText>Enter a valid phone number</ErrorText>}
             />
 
             <LoginInput
-              placeholder="phone number"
+              keyboardType="number-pad"
               onBlur={onBlur}
               onChangeText={(value) => onChange(value)}
               value={value}
@@ -125,19 +108,16 @@ export default function Login({signIn}) {
             />
           </Field>
         )}
-        name="phoneNumber"
+        name="code"
         rules={{
           required: true,
         }}
         defaultValue=""
       />
-      {/* <Field>
-        <Label>Your security pin</Label>
-        <LoginInput placeholder="xxxx" />
-      </Field> */}
+
       <LoginButtonSection>
         <LoginButton onPress={handleSubmit(onSubmit)}>
-          <LoginButtonText>Log in</LoginButtonText>
+          <LoginButtonText>Verify</LoginButtonText>
         </LoginButton>
       </LoginButtonSection>
 
@@ -152,5 +132,5 @@ export default function Login({signIn}) {
 }
 
 Login.propTypes = {
-  sign: PropTypes.func,
+  confirmCode: PropTypes.func,
 };

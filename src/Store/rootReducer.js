@@ -5,19 +5,19 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 //import all reducers
 
 import authenticationReducer from './Authentication/reducers';
-import configReducer from "./Configuration/reducers"
+import configReducer from './Configuration/reducers';
 
 const persistConfig = {
   key: 'root',
-  blacklist: ['authentication','configuration'],
+  blacklist: ['authentication', 'configuration'],
   storage: AsyncStorage,
 };
 
 const rootReducer = persistReducer(
   persistConfig,
   combineReducers({
-    authentication: authenticationReducer,
-    configuration: configReducer
+    auth: authenticationReducer,
+    configuration: configReducer,
   }),
 );
 
